@@ -19,6 +19,7 @@ public class AnimalsRace {
     private static int meters, centimeters;
     private static int numberOfRabbits, numberOfTurtles;
     private static ArrayList<Turtle> arrayOfTurtles = new ArrayList<>();
+    private static ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
     private static Scanner scan =  new Scanner(System.in);
     
     /**
@@ -36,10 +37,12 @@ public class AnimalsRace {
         centimeters = meters * 100;
         
         System.out.println("How many turtles? ");
-        numberOfTurtles = scan.nextInt();
+        numberOfTurtles = scan.nextInt();        
+        ArrayList turtles = buildTurtles(numberOfTurtles, generateRandomNumbers());
         
         System.out.println("How many rabbits? ");
         numberOfRabbits = scan.nextInt();
+        ArrayList rabbits = buildRabbits(numberOfRabbits, generateRandomNumbers(), generateRandomNumbers(), generateRandomNumbers());
     }
     
     public static int generateRandomNumbers()
@@ -58,6 +61,16 @@ public class AnimalsRace {
         }
         
         return arrayOfTurtles;
+    }
+    
+    public static ArrayList buildRabbits(int number, int speed, int numberOfnaps, int napTime)
+    {
+        for (int i = 0; i < number; i++) {
+            Rabbit rabbit = new Rabbit(speed, numberOfnaps, napTime);
+            arrayOfRabbits.add(rabbit);
+        }
+        
+        return arrayOfRabbits;
     }
 
 }
