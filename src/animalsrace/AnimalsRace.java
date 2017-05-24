@@ -42,7 +42,15 @@ public class AnimalsRace {
         
         System.out.println("How many rabbits? ");
         numberOfRabbits = scan.nextInt();
-        ArrayList rabbits = buildRabbits(numberOfRabbits, generateRandomNumbers(), generateRandomNumbers(), generateRandomNumbers());
+        ArrayList rabbits = buildRabbits(
+                numberOfRabbits,
+                generateRandomNumbers(),
+                generateRandomNumbers(),
+                generateRandomNumbers()
+        );
+        
+        startThreads(rabbits);
+        startThreads(turtles);
     }
     
     public static int generateRandomNumbers()
@@ -71,6 +79,16 @@ public class AnimalsRace {
         }
         
         return arrayOfRabbits;
+    }
+    
+    public static  void startThreads(ArrayList animals)
+    {
+        for (int i=0; i<animals.size(); i++) {
+            Object x = animals.get(i);
+            Thread animal = new Thread((Runnable) x);
+              
+            animal.start();
+        }        
     }
 
 }

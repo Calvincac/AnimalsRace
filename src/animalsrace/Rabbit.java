@@ -23,7 +23,8 @@ public class Rabbit implements Runnable{
     }
 
     @Override
-    public void run() {
+    public void run() 
+    {
         System.out.println("Rabbit running for its life!!!");
     }
     
