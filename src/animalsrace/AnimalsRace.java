@@ -66,8 +66,7 @@ public class AnimalsRace {
         for (int i = 0; i < number; i++) {
             Turtle turtle = new Turtle(speed);
             arrayOfTurtles.add(turtle);
-        }
-        
+        }        
         return arrayOfTurtles;
     }
     
@@ -76,8 +75,7 @@ public class AnimalsRace {
         for (int i = 0; i < number; i++) {
             Rabbit rabbit = new Rabbit(speed, numberOfnaps, napTime);
             arrayOfRabbits.add(rabbit);
-        }
-        
+        }        
         return arrayOfRabbits;
     }
     
@@ -90,5 +88,4 @@ public class AnimalsRace {
             animal.start();
         }        
     }
-
 }
